@@ -13,7 +13,7 @@ az extension add --name azure-devops
 ### Go to Agent Directory
 
 ```bash
-cd /Users/mayurbarage/myagent
+cd /Users/atulkamble/myagent
 ```
 
 ### Remove macOS Quarantine
@@ -38,7 +38,7 @@ xattr bin/Agent.Listener
 
 ```text
 Agent Pool : Default
-Agent Name : Mayurs-MacBook-Air
+Agent Name : atulkamble-mac
 Architecture: ARM
 ```
 
@@ -51,7 +51,7 @@ trigger:
 pool:
   name: Default
   demands:
-  - Agent.Name -equals Mayurs-MacBook-Air
+  - Agent.Name -equals atulkamble-mac
 
 steps:
 - script: echo "Hello from Self-Hosted Mac Agent"
@@ -69,7 +69,7 @@ steps:
 
 ```text
 Agent Pool : Default
-Agent Name : DESKTOP-NN9BP9S
+Agent Name : atulkamble-win
 ```
 
 ### Azure Pipeline
@@ -81,7 +81,7 @@ trigger:
 pool:
   name: Default
   demands:
-  - Agent.Name -equals DESKTOP-NN9BP9S
+  - Agent.Name -equals atulkamble-win
 
 steps:
 - script: echo Hello from Windows Self-Hosted Agent
