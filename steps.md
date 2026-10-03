@@ -45,9 +45,33 @@ Enter PAT
 ./run.sh 
 
 nohup ./run.sh > agent.log 2>&1 &
-
-Settings 
-
-
-
 ```
+
+1. create repo in github 
+
+https://github.com/user-name/azure-pipelines-agent
+
+2. create file azure-pipelines.yml
+
+trigger:
+- main
+
+pool:
+  name: pool-name
+  demands:
+  - Agent.Name -equals agent-name
+
+steps:
+- script: echo Hello from Windows Self-Hosted Agent
+  displayName: 'Hello World'
+
+- script: hostname
+  displayName: 'Check Hostname'
+
+3. commit Code 
+
+4. Azure Pipelines >> Github Connection >> Select Repo 
+
+5. // It will automatically select Yaml azure pipeline 
+
+6. Build & Run 
